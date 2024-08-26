@@ -4,7 +4,7 @@ const Home = () => {
   const categories = [];
   return (
     <div>
-      <Directory categories={categories} />
+      <Directory />
     </div>
   );
 };
