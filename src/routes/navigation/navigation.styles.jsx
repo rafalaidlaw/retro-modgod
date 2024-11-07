@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  color: #ff635e;
+  text-shadow: #9c1c18 -0.5px 0.5px;
 `;
 
 export const NavigationContainer = styled.div`
@@ -18,7 +20,7 @@ export const NavigationContainer = styled.div`
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
-  padding: 25px;
+  padding: 15px;
 `;
 
 export const NavLinks = styled.div`

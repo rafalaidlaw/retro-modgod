@@ -9,22 +9,27 @@ export const BackgroundImage = styled.div`
 `;
 
 export const Body = styled.div`
-  height: 90px;
-  padding: 0 25px;
+  height: 15px;
+  padding: 0 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  background-color: white;
+
+  /* outline: 25px solid #ff635e; */
+  background-color: #ff635e;
   opacity: 0.7;
   position: absolute;
 
   h2 {
-    font-weight: bold;
+    font-family: "Press Start 2P", serif;
+    font-weight: 400;
+    font-style: normal;
+
     margin: 0 6px 0;
-    font-size: 22px;
-    color: #4a4a4a;
+    font-size: 10px;
+    color: white;
+    text-shadow: black -2px 1px;
     text-transform: uppercase;
   }
 
@@ -41,7 +46,10 @@ export const DirectoryItemContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border-bottom: 3px solid #ff635e;
+  border-left: 3px solid #ff635e;
+  border-top: 3px solid #f4cbca;
+  border-right: 3px solid #f4cbca;
   margin: 0 7.5px 15px;
   overflow: hidden;
 
@@ -54,7 +62,17 @@ export const DirectoryItemContainer = styled.div`
     }
 
     & ${Body} {
-      opacity: 0.9;
+      height: 60px;
+      padding: 0 10px;
+      opacity: 1;
+      border-bottom: 10px solid #9c1c18;
+      border-left: 10px solid #9c1c18;
+      /* outline: 25px solid #ff635e; */
+      background-color: #ff635e;
+      h2 {
+        color: white;
+        text-shadow: none;
+      }
     }
   }
   &:first-child {

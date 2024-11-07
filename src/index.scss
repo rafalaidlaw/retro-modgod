@@ -1,17 +1,20 @@
 body {
   margin: 0;
   padding: 20px 40px;
-  font-family: "Turret Road", //"VT323", monospace, "Press Start 2P", system-ui;
-    sans-serif;
-    font-weight: 200;
+  font-family: "VT323", serif;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #ff635e;
+  // text-shadow: #9c1c18 -0.5px 0.5px;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
 
 a {
@@ -21,4 +24,5 @@ a {
 
 *{
   box-sizing: border-box;
+  
 }
