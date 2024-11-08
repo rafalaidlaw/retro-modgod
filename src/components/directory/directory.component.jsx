@@ -12,25 +12,25 @@ const categories = [
     id: 2,
     title: "Gameboy Games",
     imageUrl: "https://i.ibb.co/hdrMFmC/many-games.jpg",
-    route: "shop/games",
+    route: "shop/gameboy%20games",
   },
   {
     id: 3,
     title: "Famicom",
     imageUrl: "https://i.ibb.co/s64sHDJ/splash.jpg",
-    route: "shop/sneakers",
+    route: "shop/famicom",
   },
   {
     id: 4,
     title: "Create Your Own",
     imageUrl: "https://i.ibb.co/5vPXdXV/gba-splash-horizontal.jpg",
-    route: "shop/womens",
+    route: "shop/create%20your%20own",
   },
   {
     id: 5,
     title: "3D Print Shop",
     imageUrl: "https://i.ibb.co/54Pk0J7/3-D-KOT-KROP.jpg",
-    route: "shop/mens",
+    route: "shop/3d%20print%20shop",
   },
 ];
 
