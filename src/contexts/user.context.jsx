@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import { createAction } from ".././Utils/reducer/reducer.utlis";
+import { createAction } from "../Utils/reducer/reducer.utils";
 import {
   onAuthStateChangedListener,
   createUserDocumentFromAuth,
