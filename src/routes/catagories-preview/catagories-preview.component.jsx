@@ -6,12 +6,14 @@ const CategoriesPreview = () => {
   const { categoriesMap } = useContext(CatagoriesContext);
   return (
     <>
-      {Object.keys(categoriesMap).map((title) => {
-        const products = categoriesMap[title];
-        return (
-          <CategoryPreview key={title} title={title} products={products} />
-        );
-      })}
+      {Object.keys(categoriesMap)
+        .sort((a, b) => (a.rank < b.rank ? 1 : -1))
+        .map((title) => {
+          const products = categoriesMap[title];
+          return (
+            <CategoryPreview key={title} title={title} products={products} />
+          );
+        })}
     </>
   );
 };

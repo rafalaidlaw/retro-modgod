@@ -1,6 +1,7 @@
 const SHOP_DATA = [
   {
     title: "GBA",
+    rank: 1,
     items: [
       {
         id: 1,
@@ -36,6 +37,7 @@ const SHOP_DATA = [
   },
   {
     title: "Gameboy Games",
+    rank: 2,
     items: [
       {
         id: 10,
@@ -77,6 +79,7 @@ const SHOP_DATA = [
   },
   {
     title: "Famicom",
+    rank: 3,
     items: [
       {
         id: 16,
@@ -124,6 +127,7 @@ const SHOP_DATA = [
   },
   {
     title: "Create Your Own",
+    rank: 4,
     items: [
       {
         id: 23,
@@ -159,6 +163,7 @@ const SHOP_DATA = [
   },
   {
     title: "3D Print Shop",
+    rank: 5,
     items: [
       {
         id: 30,
