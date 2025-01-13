@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 
 import FormInput from "../form-input/form-input.component";
+
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles";
 import {
-  googleSignInStart,
-  emailSignInStart,
-} from "../../routes/store/user/user.action";
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+  signInAuthUserWithEmailAndPassword,
+} from "../../Utils/firebase/firebase.utils";
+
+import "./sign-in-form.styles.scss";
 
 const defaultFormFields = {
   email: "",
@@ -16,7 +18,6 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
-  const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -25,34 +26,40 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    dispatch(googleSignInStart());
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      dispatch(emailSignInStart(email, password));
+      const { user } = await signInAuthUserWithEmailAndPassword(
+        email,
+        password
+      );
+
       resetFormFields();
     } catch (error) {
-      console.log("user sign in failed", error);
+      if (error.code == "auth/invalid-credential") {
+        alert("Email or password is incorrect");
+      }
+      console.log(error);
     }
   };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
   };
 
   return (
-    <SignInContainer>
+    <div className="sign-in-container">
       <h2>Already have an account?</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Email"
-          type="email"
+          input="email"
           required
           onChange={handleChange}
           name="email"
@@ -67,18 +74,18 @@ const SignInForm = () => {
           name="password"
           value={password}
         />
-        <ButtonsContainer>
+        <div className="buttons-container">
           <Button type="submit">Sign In</Button>
           <Button
-            buttonType={BUTTON_TYPE_CLASSES.google}
             type="button"
             onClick={signInWithGoogle}
+            buttonType={BUTTON_TYPE_CLASSES.google}
           >
-            Sign In With Google
+            Google Sign In
           </Button>
-        </ButtonsContainer>
+        </div>
       </form>
-    </SignInContainer>
+    </div>
   );
 };
 
