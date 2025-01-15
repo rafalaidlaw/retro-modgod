@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import ProductCard from "../../components/product-card/product-card.component";
-import { selectCategoriesMap } from "../store/categories/categories.selector";
+import { selectCategoriesMap } from "../store/categories/category.selector";
 
 const Category = () => {
   const { category } = useParams();
