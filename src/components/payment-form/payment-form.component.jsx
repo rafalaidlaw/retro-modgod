@@ -6,7 +6,7 @@ import { selectCartTotal } from "../../routes/store/cart/cart.selector";
 import { selectCurrentUser } from "../../routes/store/user/user.selector";
 
 import { FormContainer } from "./payment-form.styles";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 import { PaymentButton, PaymentFormContainer } from "./payment-form.styles";
 
@@ -48,7 +48,7 @@ const PaymentForm = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: currentUser ? currentUser.displayName : "Rolf Loblaws",
+          name: currentUser ? currentUser.displayName : "Guest",
         },
       },
     });
